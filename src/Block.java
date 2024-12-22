@@ -10,12 +10,14 @@ public class Block {
     private Long timestamp;
     private List <Transaction> transactions;
 
-    public Block(String hashPrecedente,String nonce, Long timestamp, List <Transaction> transactions) {
+    public Block(int id,String hashPrecedente,  List <Transaction> transactions) {
         this.id = idCounter++;
+        this.timestamp = new Date().getTime();
+        this.hashPrecedente = hashPrecedente;
+        this.transactions = transactions;
         this.hashCorrente = calculateHash();//calcolo hash del blocco
       //  this.nonce = nonce;
-        this.timestamp = new Date().getTime();
-        this.transactions = transactions;
+
 
     }
 
@@ -26,6 +28,11 @@ public class Block {
     public String getHashPrecedente() {
         return hashPrecedente;
     }
+
+    public int getId() {
+        return id;
+    }
+
     public String calculateHash (){
         try{
             //concateno il contenuto del blocco
