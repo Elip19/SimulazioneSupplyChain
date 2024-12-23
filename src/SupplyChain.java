@@ -12,6 +12,8 @@ public class SupplyChain {
 
     }
 
+
+
     //aggiungi prodotto alla supplyChain
     public boolean addProdotto(String prodotto) {
         return this.prodotto.add(prodotto);
