@@ -22,9 +22,9 @@ public class SupplyChain {
     public List<String> getProdotto() {
         return this.prodotto;
     }
-    // aggiungi transazione nella catena
-    public void addTransaction(List<Transaction> transactions) {
-        chain.addBlock(transactions);
+   //aggiungo la blockchain nella supplychain
+    public void addBlockchain (Chain chain) {
+        this.chain = chain;
     }
     //restituisce la rappresentazione della blockchain
     public String getChain() {
